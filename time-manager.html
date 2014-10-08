@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="tmApp">
+<head>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.css" />
+
+<link rel="stylesheet" href="time-manager.css" />
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-sanitize.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
+
+<script type="text/javascript" src="time-manager.js"></script>
+
+<title>Work Week Time Manager</title>
+</head>
+
+<body ng-controller="projectCtrl">
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Project</th>
+				<th>Percentage</th>
+				<th>Hours per period (80 hrs)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="project in projects">
+				<td>{{project.name}}</td>
+				<td><input ng-model="project.percent" type="number" min="0" max="100"/></td>
+				<td><div class="hours">{{toHours(project.percent)}}</div></td>
+			</tr>
+		</tbody>
+	</table>
+	
+
+	<h2>Hours Worked</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Project</th>
+				<th>Monday</th>
+				<th>Tuesday</th>
+				<th>Wednesday</th>
+				<th>Thursday</th>
+				<th>Friday</th>
+			</tr>
+		</thead>
+	</table>
+</body>	
+	
+</html>
